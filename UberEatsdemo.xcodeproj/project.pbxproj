@@ -99,6 +99,9 @@
 		53AA5FF623265986001A794E /* UberEatsdemo */ = {
 			isa = PBXGroup;
 			children = (
+				53AA60392326604B001A794E /* Base */,
+				53AA603223265FCF001A794E /* Data */,
+				53AA603123265FC4001A794E /* MVVM */,
 				53AA5FF723265986001A794E /* AppDelegate.swift */,
 				53AA5FF923265986001A794E /* ViewController.swift */,
 				53AA5FFB23265986001A794E /* Main.storyboard */,
@@ -126,6 +129,75 @@
 				53AA601C23265988001A794E /* Info.plist */,
 			);
 			path = UberEatsdemoUITests;
+			sourceTree = "<group>";
+		};
+		53AA603123265FC4001A794E /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				53AA603623266028001A794E /* Common */,
+				53AA60352326600C001A794E /* AddSearchAddress */,
+				53AA603423265FEE001A794E /* RestaurentListByAddress */,
+				53AA603323265FE1001A794E /* Dashboard */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		53AA603223265FCF001A794E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		53AA603323265FE1001A794E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		53AA603423265FEE001A794E /* RestaurentListByAddress */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RestaurentListByAddress;
+			sourceTree = "<group>";
+		};
+		53AA60352326600C001A794E /* AddSearchAddress */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddSearchAddress;
+			sourceTree = "<group>";
+		};
+		53AA603623266028001A794E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				53AA60382326603A001A794E /* Cell */,
+				53AA603723266032001A794E /* CustomView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		53AA603723266032001A794E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		53AA60382326603A001A794E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		53AA60392326604B001A794E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
