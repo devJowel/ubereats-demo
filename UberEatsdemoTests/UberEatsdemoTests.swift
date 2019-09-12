@@ -57,5 +57,13 @@ class UberEatsdemoTests: XCTestCase {
     }
     
 
+    func test_ColelctionView_hidden_if_nill_restaurents() {
+        var vc = MyViewController.init(collectionView: UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init()), restaurents: nil)
+        
+        XCTAssertEqual(vc.collectionView.isHidden, true)
+        
+    }
+    
+    
 }
 //
