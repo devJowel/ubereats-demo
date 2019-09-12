@@ -15,6 +15,10 @@
 		53AA600523265988001A794E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AA600323265988001A794E /* LaunchScreen.storyboard */; };
 		53AA601023265988001A794E /* UberEatsdemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA600F23265988001A794E /* UberEatsdemoTests.swift */; };
 		53AA601B23265988001A794E /* UberEatsdemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA601A23265988001A794E /* UberEatsdemoUITests.swift */; };
+		53AA603B2326615F001A794E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA603A2326615F001A794E /* CustomTabBar.swift */; };
+		53AA60402326F5CC001A794E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA603F2326F5CC001A794E /* CustomTabBarController.swift */; };
+		53DC5D5D2327BBA200DE8259 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC5D5C2327BBA200DE8259 /* Extentions.swift */; };
+		53DC5D5F2327BC4300DE8259 /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC5D5E2327BC4300DE8259 /* CustomTabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		53AA601623265988001A794E /* UberEatsdemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberEatsdemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53AA601A23265988001A794E /* UberEatsdemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberEatsdemoUITests.swift; sourceTree = "<group>"; };
 		53AA601C23265988001A794E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53AA603A2326615F001A794E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		53AA603F2326F5CC001A794E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		53DC5D5C2327BBA200DE8259 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		53DC5D5E2327BC4300DE8259 /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		53AA5FF623265986001A794E /* UberEatsdemo */ = {
 			isa = PBXGroup;
 			children = (
+				53AA603623266028001A794E /* Common */,
 				53AA60392326604B001A794E /* Base */,
 				53AA603223265FCF001A794E /* Data */,
 				53AA603123265FC4001A794E /* MVVM */,
@@ -134,7 +143,6 @@
 		53AA603123265FC4001A794E /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				53AA603623266028001A794E /* Common */,
 				53AA60352326600C001A794E /* AddSearchAddress */,
 				53AA603423265FEE001A794E /* RestaurentListByAddress */,
 				53AA603323265FE1001A794E /* Dashboard */,
@@ -173,6 +181,7 @@
 		53AA603623266028001A794E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				53DC5D5B2327BB8600DE8259 /* Extension */,
 				53AA60382326603A001A794E /* Cell */,
 				53AA603723266032001A794E /* CustomView */,
 			);
@@ -182,6 +191,8 @@
 		53AA603723266032001A794E /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				53AA603A2326615F001A794E /* CustomTabBar.swift */,
+				53DC5D5E2327BC4300DE8259 /* CustomTabBarItem.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -196,8 +207,17 @@
 		53AA60392326604B001A794E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				53AA603F2326F5CC001A794E /* CustomTabBarController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		53DC5D5B2327BB8600DE8259 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				53DC5D5C2327BBA200DE8259 /* Extentions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +230,7 @@
 				53AA5FF023265985001A794E /* Sources */,
 				53AA5FF123265985001A794E /* Frameworks */,
 				53AA5FF223265985001A794E /* Resources */,
+				53AA603C232661EE001A794E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,12 +347,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53AA603C232661EE001A794E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53AA5FF023265985001A794E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AA603B2326615F001A794E /* CustomTabBar.swift in Sources */,
 				53AA600023265986001A794E /* UberEatsdemo.xcdatamodeld in Sources */,
+				53DC5D5F2327BC4300DE8259 /* CustomTabBarItem.swift in Sources */,
+				53DC5D5D2327BBA200DE8259 /* Extentions.swift in Sources */,
+				53AA60402326F5CC001A794E /* CustomTabBarController.swift in Sources */,
 				53AA5FFA23265986001A794E /* ViewController.swift in Sources */,
 				53AA5FF823265986001A794E /* AppDelegate.swift in Sources */,
 			);
@@ -511,6 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GZDW98G8;
 				INFOPLIST_FILE = UberEatsdemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,6 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GZDW98G8;
 				INFOPLIST_FILE = UberEatsdemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

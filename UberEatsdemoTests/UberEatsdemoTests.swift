@@ -12,23 +12,50 @@ import XCTest
 class UberEatsdemoTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_restaurentModel() {
+        let restaurent = Restaurent.init(name: "", imageURL: "", keywords: "", timeToDelever: "", reviewStar: 0, numberOfReviers: 0, minStartingPrice: 0)
+        XCTAssertNotNil(restaurent)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    //    func test_resturent_model_nil() {
+    //        var restaurent = Restaurent.createRestaurent()
+    //        XCTAssertNotNil(restaurent)
+    //    }
+    
+    func test_MyViewController_empty_array() {
+        
+        let restaurent = Restaurent.init(name: "", imageURL: "", keywords: "", timeToDelever: "", reviewStar: 0, numberOfReviers: 0, minStartingPrice: 0)
+        
+        let restaurent1 = Restaurent.init(name: "", imageURL: "", keywords: "", timeToDelever: "", reviewStar: 0, numberOfReviers: 0, minStartingPrice: 0)
+        
+        
+        var vc = MyViewController.init(collectionView: UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init()), restaurents: nil)
+        
+        //XCTAssertNil(vc.restaurents)
+        
+        
+        XCTAssertEqual(vc.collectionView.numberOfItems(inSection: 0), 2)
+        
+        
+        
+        //XCTAssertEqual(vc.restaurents.count, 0)
     }
+    
+    
+    func test_ColelctionView_hidden_if_empty_restaurents() {
+        var vc = MyViewController.init(collectionView: UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init()), restaurents: [])
+        
+        XCTAssertEqual(vc.collectionView.isHidden, true)
+        
+    }
+    
 
 }
+//
