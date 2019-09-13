@@ -41,7 +41,7 @@ class UberEatsdemoTests: XCTestCase {
         //XCTAssertNil(vc.restaurents)
         
         
-        XCTAssertEqual(vc.collectionView.numberOfItems(inSection: 0), 2)
+        XCTAssertEqual(vc.collectionView.numberOfItems(inSection: 0), 0)
         
         
         
